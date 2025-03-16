@@ -59,6 +59,11 @@ aside{
 .bal {
     grid-area:b;
     background-image: url('pacificrimkepek/asidebal.png');
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
 }
 .jobb {
     grid-area:j;
