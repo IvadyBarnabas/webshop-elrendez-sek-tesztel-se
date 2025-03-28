@@ -93,11 +93,14 @@ nav ul li a:hover {
 }
 
 .product-card {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    object-fit: cover;
+    margin: 10px;
+    font-size: 70%;
 }
 
 .product-card img {
