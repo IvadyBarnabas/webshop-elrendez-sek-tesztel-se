@@ -51,14 +51,17 @@ article {
     max-width: 700px;
 }
 aside{
-    color: #00ffbe;
     border-radius: 5px;
 }
 .bal {
     grid-area:b;
-    padding: 20px;
+    padding: 5px;
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 30px;
+    position: fixed;
+    background: linear-gradient(to right, #00ffbe, #008f6b);
+    border-radius: 15px;
+    margin: 20px;
 }
 .bal a{
     text-decoration: none;
@@ -95,8 +98,8 @@ footer {
     display: grid;
     grid-template-columns:auto 1fr;
     align-items: center;
-    border-left: 2px solid blue;
-    border-right: 2px solid blue;
+    border-left: 2px solid #00ffbe;
+    border-right: 2px solid #00ffbe;
     border-top: none;
     border-bottom: none;
     padding: 10px;
