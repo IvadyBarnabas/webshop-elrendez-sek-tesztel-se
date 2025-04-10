@@ -17,59 +17,118 @@
             </ul>
         </nav>
     </header>
+
     <main>
         <article id="figures">
             <h2>Kiemelt Termékek</h2>
             <section class="container">
                 <div class="img"><img src="kepek/gipsydanger.png" alt="gipsy_danger"></div>
                 <div class="content">
-                <div class="title">Pacific-Rim: Gipsy Danger Action Figure</div>
-                <div class="author">By: <span class="author">LingJiHun</span></div>
-                <div class="instock">IN STOCK</div>
-                <div class="price">$114<sup>99</sup></div>
+                    <div class="title">Pacific-Rim: Gipsy Danger Action Figure</div>
+                    <div class="author">By: <span class="author">LingJiHun</span></div>
+                    <div class="instock">IN STOCK</div>
+                    <div class="price">$114.99</div>
                 </div>         
             </section> 
             <section class="container">
                 <div class="img"><img src="kepek/halo.png" alt="halo"></div>
                 <div class="content">
-                <div class="title">Halo: Reach RE:EDIT JUN-A266 (Noble Three) 1/12 Scale PX Previews Exclusive Action Figure</div>
-                <div class="author">By: <span class="author">100TOYS</span></div>
-                <div class="preorder">PRE-ORDER</div>
-                <div class="price">$204<sup>99</sup></div>
+                    <div class="title">Halo: Reach RE:EDIT JUN-A266 (Noble Three) 1/12 Scale PX Previews Exclusive Action Figure</div>
+                    <div class="author">By: <span class="author">100TOYS</span></div>
+                    <div class="preorder">PRE-ORDER</div>
+                    <div class="price">$204.99</div>
                 </div>                     
             </section>
             <section class="container">
                 <div class="img"><img src="kepek/deadpool.png" alt="crimsontyphoon"></div>
                 <div class="content">
-                <div class="title">Deadpool & Wolverine S.H.Figuarts Deadpool Action Figure</div>
-                <div class="author">By: <span class="author">Bandai Spirits</span></div>
-                <div class="instock">IN STOCK</div>
-                <div class="price">$89<sup>99</sup></div>                    
+                    <div class="title">Deadpool & Wolverine S.H.Figuarts Deadpool Action Figure</div>
+                    <div class="author">By: <span class="author">Bandai Spirits</span></div>
+                    <div class="instock">IN STOCK</div>
+                    <div class="price">$89.99</div>                    
                 </div> 
             </section> 
             <section class="container">
                 <div class="img"><img src="kepek/HarleyQuinnAnime.png" alt="Leatherback"></div>
                 <div class="content">
-                <div class="title">Suicide Squad Isekai Amazing Yamaguchi Revoltech NR082 Harley Quinn Action Figure</div>
-                <div class="author">By: <span class="author">Kaiyodo</span></div>
-                <div class="preorder">PRE-ORDER</div>
-                <div class="price">$99<sup>99</sup></div>                    
+                    <div class="title">Suicide Squad Isekai Amazing Yamaguchi Revoltech NR082 Harley Quinn Action Figure</div>
+                    <div class="author">By: <span class="author">Kaiyodo</span></div>
+                    <div class="preorder">PRE-ORDER</div>
+                    <div class="price">$99.99</div>                    
                 </div>     
             </section>
         </article>
+
         <aside class="bal">
             <div><h3>Témák:</h3></div> 
-                <div class="a"><a href="marvel.html">Marvel</a></div>
-                <div class="a"><a href="dc.html">DC</a></div>
-                <div class="a"><a href="gaming.html">Gaming</a></div>
-                <div class="a"><a href="anime.html">Anime</a></div>
-                <div class="a"><a href="transformers.html">Transformers</a></div>
-                <div class="a"><a href="movies.html">Kultfilmek</a></div>
+            <div class="a"><a href="marvel.html">Marvel</a></div>
+            <div class="a"><a href="dc.html">DC</a></div>
+            <div class="a"><a href="gaming.html">Gaming</a></div>
+            <div class="a"><a href="anime.html">Anime</a></div>
+            <div class="a"><a href="starwars.html">StarWars</a></div>
+            <div class="a"><a href="movies.html">Kultfilmek</a></div>
         </aside>
         <aside class="jobb"></aside>
     </main>
-<footer id="about">
-<p>Semmilyen jog nincsen fentartva és ez egy illegális tesztwebshop</p>
-</footer>
+
+    <footer id="about">
+        <p>Semmilyen jog nincsen fentartva és ez egy illegális tesztwebshop</p>
+    </footer>
+
+    <!-- 🔳 POPUP HTML -->
+    <div id="popup" class="popup-hidden">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <div class="popup-grid">
+                <div class="popup-img"><img id="popup-img" src="" alt="Termék képe"></div>
+                <div class="popup-text">
+                    <h3 id="popup-title">Cím</h3>
+                    <p id="popup-author">Gyártó: </p>
+                    <p id="popup-stock">Állapot: </p>
+                    <p id="popup-price">Ár: </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🔧 SCRIPT -->
+    <script>
+        const containers = document.querySelectorAll('.container');
+        const popup = document.getElementById('popup');
+        const popupImg = document.getElementById('popup-img');
+        const popupTitle = document.getElementById('popup-title');
+        const popupAuthor = document.getElementById('popup-author');
+        const popupStock = document.getElementById('popup-stock');
+        const popupPrice = document.getElementById('popup-price');
+        const closeBtn = document.querySelector('.close-btn');
+
+        containers.forEach(container => {
+            container.addEventListener('click', () => {
+                const imgSrc = container.querySelector('img').src;
+                const title = container.querySelector('.title').textContent;
+                const author = container.querySelector('.author').textContent;
+                const stock = container.querySelector('.instock, .preorder')?.textContent || 'N/A';
+                const price = container.querySelector('.price').textContent;
+
+                popupImg.src = imgSrc;
+                popupTitle.textContent = title;
+                popupAuthor.textContent = author;
+                popupStock.textContent = `Állapot: ${stock}`;
+                popupPrice.textContent = `Ár: ${price}`;
+
+                popup.classList.add('popup-show');
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            popup.classList.remove('popup-show');
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === popup) {
+                popup.classList.remove('popup-show');
+            }
+        });
+    </script>
 </body>
 </html>

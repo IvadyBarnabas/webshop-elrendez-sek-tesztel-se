@@ -19,7 +19,7 @@
     </header>
     <main>
         <article id="figures">
-            <h2>Termékek</h2>
+            <h2>Termékek (DC)</h2>
             <section class="container">
                 <div class="img"><img src="kepek/mafexbatman22.png" alt="mafexbatman22"></div>
                 <div class="content">
@@ -63,7 +63,7 @@
                 <div class="a"><a href="marvel.html">Marvel</a></div>
                 <div class="a"><a href="gaming.html">Gaming</a></div>
                 <div class="a"><a href="anime.html">Anime</a></div>
-                <div class="a"><a href="transformers.html">Transformers</a></div>
+                <div class="a"><a href="starwars.html">StarWars</a></div>
                 <div class="a"><a href="movies.html">Kultfilmek</a></div>
         </aside>
         <aside class="jobb"></aside>
@@ -71,5 +71,60 @@
 <footer id="about">
 <p>Semmilyen jog nincsen fentartva és ez egy illegális tesztwebshop</p>
 </footer>
+    <!-- 🔳 POPUP HTML -->
+    <div id="popup" class="popup-hidden">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <div class="popup-grid">
+                <div class="popup-img"><img id="popup-img" src="" alt="Termék képe"></div>
+                <div class="popup-text">
+                    <h3 id="popup-title">Cím</h3>
+                    <p id="popup-author">Gyártó: </p>
+                    <p id="popup-stock">Állapot: </p>
+                    <p id="popup-price">Ár: </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🔧 SCRIPT -->
+    <script>
+        const containers = document.querySelectorAll('.container');
+        const popup = document.getElementById('popup');
+        const popupImg = document.getElementById('popup-img');
+        const popupTitle = document.getElementById('popup-title');
+        const popupAuthor = document.getElementById('popup-author');
+        const popupStock = document.getElementById('popup-stock');
+        const popupPrice = document.getElementById('popup-price');
+        const closeBtn = document.querySelector('.close-btn');
+
+        containers.forEach(container => {
+            container.addEventListener('click', () => {
+                const imgSrc = container.querySelector('img').src;
+                const title = container.querySelector('.title').textContent;
+                const author = container.querySelector('.author').textContent;
+                const stock = container.querySelector('.instock, .preorder')?.textContent || 'N/A';
+                const price = container.querySelector('.price').textContent;
+
+                popupImg.src = imgSrc;
+                popupTitle.textContent = title;
+                popupAuthor.textContent = author;
+                popupStock.textContent = `Állapot: ${stock}`;
+                popupPrice.textContent = `Ár: ${price}`;
+
+                popup.classList.add('popup-show');
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            popup.classList.remove('popup-show');
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === popup) {
+                popup.classList.remove('popup-show');
+            }
+        });
+    </script>
 </body>
 </html>
