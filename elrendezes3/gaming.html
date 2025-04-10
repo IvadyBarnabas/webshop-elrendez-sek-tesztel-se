@@ -16,6 +16,9 @@
                 <li><a href="#about">About</a></li>
             </ul>
         </nav>
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Keresés a termékek között...">
+        </div>
     </header>
     <main>
         <article id="figures">
@@ -143,6 +146,20 @@
                 popup.classList.remove('popup-show');
             }
         });
+        searchInput.addEventListener('input', () => {
+    const searchTerm = searchInput.value.toLowerCase();
+    
+    containers.forEach(container => {
+        const title = container.querySelector('.title').textContent.toLowerCase();
+        const author = container.querySelector('.author').textContent.toLowerCase();
+
+        if (title.includes(searchTerm) || author.includes(searchTerm)) {
+            container.style.display = 'grid';
+        } else {
+            container.style.display = 'none';
+        }
+    });
+});
     </script>
 </body>
 </html>

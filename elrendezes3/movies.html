@@ -16,6 +16,9 @@
                 <li><a href="#about">About</a></li>
             </ul>
         </nav>
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Keresés a termékek között...">
+        </div>
     </header>
     <main>
         <article id="figures">
@@ -27,6 +30,42 @@
                 <div class="author">By: <span class="author">LingJiHun</span></div>
                 <div class="instock">IN STOCK</div>
                 <div class="price">$114.99</div>
+                </div>         
+            </section>
+            <section class="container">
+                <div class="img"><img src="kepek/godzilla.png" alt="godzilla"></div>
+                <div class="content">
+                <div class="title">Godzilla x Kong: The New Empire S.H.MonsterArts Godzilla (Evolved Ver.)</div>
+                <div class="author">By: <span class="author">Bandai Spirits</span></div>
+                <div class="instock">IN STOCK</div>
+                <div class="price">$139.99</div>
+                </div>         
+            </section>
+            <section class="container">
+                <div class="img"><img src="kepek/terminator.png" alt="terminator"></div>
+                <div class="content">
+                <div class="title">Terminator 2: Judgement Day MAFEX No.199 T-800 (T2 Ver.) Action Figure</div>
+                <div class="author">By: <span class="author">Medicom Toy</span></div>
+                <div class="instock">IN STOCK</div>
+                <div class="price">$109.99</div>
+                </div>         
+            </section>
+            <section class="container">
+                <div class="img"><img src="kepek/t800.png" alt="terminator"></div>
+                <div class="content">
+                <div class="title">Terminator 2: Judgement Day MAFEX No.206 Endoskeleton (T2 Ver.) Action Figure</div>
+                <div class="author">By: <span class="author">Medicom Toy</span></div>
+                <div class="instock">IN STOCK</div>
+                <div class="price">$139.99</div>
+                </div>         
+            </section>
+            <section class="container">
+                <div class="img"><img src="kepek/snakeeyes.png" alt="snakeeyes"></div>
+                <div class="content">
+                <div class="title">G.I. Joe Classified Series Snake Eyes & Timber (Ver.2)</div>
+                <div class="author">By: <span class="author">Hasbro</span></div>
+                <div class="instock">IN STOCK</div>
+                <div class="price">$45.99</div>
                 </div>         
             </section> 
             
@@ -99,6 +138,20 @@
                 popup.classList.remove('popup-show');
             }
         });
+        searchInput.addEventListener('input', () => {
+    const searchTerm = searchInput.value.toLowerCase();
+    
+    containers.forEach(container => {
+        const title = container.querySelector('.title').textContent.toLowerCase();
+        const author = container.querySelector('.author').textContent.toLowerCase();
+
+        if (title.includes(searchTerm) || author.includes(searchTerm)) {
+            container.style.display = 'grid';
+        } else {
+            container.style.display = 'none';
+        }
+    });
+});
     </script>
 </body>
 </html>

@@ -5,7 +5,7 @@
 }
 body {
     background-color: #111;
-    color: #00ffbe;
+    color: black;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
 }
@@ -22,7 +22,6 @@ main {
     color: black;
 }
 
-/* HEADER */
 header {
     grid-area: h;
     padding: 20px;
@@ -37,7 +36,6 @@ header h1 {
     letter-spacing: 2px;
 }
 
-/* NAVIGATION */
 nav {
     grid-area: n;
     position: sticky;
@@ -67,7 +65,6 @@ nav a:hover {
     border-radius: 8px;
 }
 
-/* ARTICLE: PRODUCTS */
 article {
     grid-area: a;
     display: grid;
@@ -83,7 +80,6 @@ article h2 {
     border-bottom: 2px solid #00ffbe;
 }
 
-/* PRODUCT CONTAINER */
 .container {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -128,7 +124,6 @@ article h2 {
     font-weight: bold;
 }
 
-/* LEFT SIDEBAR */
 .bal {
     grid-area: b;
     background: linear-gradient(to right, #00ffbe, #008f6b);
@@ -161,13 +156,11 @@ article h2 {
     background-color: #222;
 }
 
-/* RIGHT SIDEBAR (Üres) */
 .jobb {
     grid-area: j;
     padding: 20px;
 }
 
-/* FOOTER */
 footer {
     grid-area: f;
     background-color: #111;
@@ -177,6 +170,8 @@ footer {
     font-size: 0.9rem;
     border-top: 2px solid #00ffbe;
 }
+
+
 #popup {
     position: fixed;
     inset: 0;
@@ -217,7 +212,6 @@ footer {
     display: grid;
     gap: 8px;
     align-content: start;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   }
 
   .popup-text h3 {
@@ -250,3 +244,20 @@ footer {
       text-align: center;
     }
   }
+.search-box {
+    text-align: center;
+    margin: 5px;
+}
+#search-input {
+    width: 80%;
+    max-width: 500px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #00ffbe;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s ease;
+}
+#search-input:focus {
+    box-shadow: 0 0 10px rgba(0, 255, 190, 0.5);
+}
